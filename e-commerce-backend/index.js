@@ -30,6 +30,11 @@ app.post("/upload", upload.single('product'), (req, res) => {
         image_url: `http://localhost:4000/images/${req.file.filename}`
     })
 })
+app.get("/testing",(req,res)=>{
+	res.json({
+		success: "okay"
+	})
+})
 app.use('/images', express.static('upload/images'));
 
 // MiddleWare to fetch user from database
